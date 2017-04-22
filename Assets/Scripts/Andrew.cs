@@ -10,9 +10,10 @@ public class Andrew : MonoBehaviour {
     public int MinY = 0;
 
     public ClueManager ClueManager;
+    public MapController MapController;
 
 
-    int[,] sampleMap = new[,] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
+    //int[,] sampleMap = new[,] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
 
     bool[,] zonesFound;
 
@@ -33,12 +34,11 @@ public class Andrew : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        var map = sampleMap; // MapManager.GetMap();
-        //var clueId = ClueManager.AnalyzeMap(map??)
-        zonesFound = new bool[map.GetLength(0), map.GetLength(1)];
-        for ( int i = 0; i < map.GetLength(0); i++ )
+        ClueManager.AnalyzeMap(MapController);
+        zonesFound = new bool[MapController.Tiles.GetLength(0), MapController.Tiles.GetLength(1)];
+        for ( int i = 0; i < MapController.Tiles.GetLength(0); i++ )
         {
-            for ( int j = 0; j < map.GetLength(1); j++ )
+            for ( int j = 0; j < MapController.Tiles.GetLength(1); j++ )
             {
                 zonesFound[i, j] = false;
             }
@@ -58,14 +58,14 @@ public class Andrew : MonoBehaviour {
         }
 
         // get current clue
-        int currentClue = 3; // ClueManager.GetCurrentClue();
+        int currentClue = ClueManager.GetCurrentClue();
 
         // check adjacent map items
-        var map = sampleMap; // MapManager.GetMap();
-        int tileUp = playerLocation.Y < MaxY ? map[playerLocation.X, playerLocation.Y + 1] : -1;
-        int tileDown = playerLocation.Y > MinY ? map[playerLocation.X, playerLocation.Y - 1] : -1;
-        int tileLeft = playerLocation.X > MinX ? map[playerLocation.X - 1, playerLocation.Y] : -1;
-        int tileRight = playerLocation.X < MaxX ? map[playerLocation.X + 1, playerLocation.Y] : -1;
+        //var map = sampleMap; // MapManager.GetMap();
+        int tileUp = playerLocation.Y < MaxY ? GetTileClue(MapController.Tiles[playerLocation.X][playerLocation.Y + 1]) : -1;
+        int tileDown = playerLocation.Y > MinY ? GetTileClue(MapController.Tiles[playerLocation.X][playerLocation.Y - 1]) : -1;
+        int tileLeft = playerLocation.X > MinX ? GetTileClue(MapController.Tiles[playerLocation.X - 1][playerLocation.Y]): -1;
+        int tileRight = playerLocation.X < MaxX ? GetTileClue(MapController.Tiles[playerLocation.X + 1][playerLocation.Y]) : -1;
 
         // see if any belongs to the clue
         if ( tileUp == currentClue && !zonesFound[playerLocation.X, playerLocation.Y + 1] )
@@ -76,7 +76,7 @@ public class Andrew : MonoBehaviour {
             GameObject tileObject = GameObject.Find("test");
             tileObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.5f);
             // register zone is found for current clue
-            //ClueManager.FoundOne(); // reduce counter/go to next clue/win game
+            ClueManager.FoundOne(); // reduce counter/go to next clue/win game
 
         }
         if ( tileDown == currentClue )
@@ -93,5 +93,9 @@ public class Andrew : MonoBehaviour {
         }
     }
 
-
+    private int GetTileClue(GameObject tile)
+    {
+        TileManager tileManager = (TileManager)tile.GetComponent(typeof(TileManager));
+        return tileManager.TileId;
+    }
 }
