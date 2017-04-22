@@ -7,7 +7,51 @@ public class MapController : MonoBehaviour
     // Use this for initialization
     private void Start()
     {
+        CreateMap();
+
         SetTileCoordinates();
+    }
+
+    private void CreateMap()
+    {
+        Tiles = new[]
+        {
+           new [] {
+               CreateRoadTile(RoadSectionType.RoadCornerTopLeft),
+               CreateRoadTile(RoadSectionType.RoadHorizontal),
+               CreateRoadTile(RoadSectionType.RoadBranchDown),
+               CreateRoadTile(RoadSectionType.RoadHorizontal),
+               CreateRoadTile(RoadSectionType.RoadCornerTopRight),
+           },
+           new [] {
+               CreateRoadTile(RoadSectionType.RoadVertical),
+               null,
+               CreateRoadTile(RoadSectionType.RoadVertical),
+               null,
+               CreateRoadTile(RoadSectionType.RoadVertical),
+           },
+           new [] {
+               CreateRoadTile(RoadSectionType.RoadBranchRight),
+               CreateRoadTile(RoadSectionType.RoadHorizontal),
+               CreateRoadTile(RoadSectionType.RoadCross),
+               CreateRoadTile(RoadSectionType.RoadHorizontal),
+               CreateRoadTile(RoadSectionType.RoadBranchLeft),
+           },
+           new [] {
+               CreateRoadTile(RoadSectionType.RoadVertical),
+               null,
+               CreateRoadTile(RoadSectionType.RoadVertical),
+               null,
+               CreateRoadTile(RoadSectionType.RoadVertical),
+           },
+           new [] {
+               CreateRoadTile(RoadSectionType.RoadCornerBottomLeft),
+               CreateRoadTile(RoadSectionType.RoadHorizontal),
+               CreateRoadTile(RoadSectionType.RoadBranchUp),
+               CreateRoadTile(RoadSectionType.RoadHorizontal),
+               CreateRoadTile(RoadSectionType.RoadCornerBottomRight),
+           },
+        };
     }
 
     private void SetTileCoordinates()
