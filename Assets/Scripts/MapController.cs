@@ -79,6 +79,11 @@ public class MapController : MonoBehaviour
         var cellIndex = Convert.ToInt32(position.x);
         var rowPosition = CalculateArrayRowIndex(Convert.ToInt32(position.y));
 
+        if (cellIndex < 0 || cellIndex > Tiles[0].Length - 1 || rowPosition < 0 || rowPosition > Tiles.Length - 1)
+        {
+            return null;
+        }
+
         return Tiles[rowPosition][cellIndex];
     }
 
