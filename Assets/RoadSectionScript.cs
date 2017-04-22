@@ -73,7 +73,8 @@ public class RoadSectionScript : MonoBehaviour
             tile.transform.parent = transform;
             tile.transform.localPosition = Vector3.zero;
             tile.transform.localPosition = new Vector2(0, i - 1);
-            tile.GetComponent<RoadScript>().SectionType = type;
+
+            tile.GetComponentInChildren<RoadScript>().SectionType = type;
         }
     }
 
