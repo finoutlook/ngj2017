@@ -10,11 +10,13 @@ public class PlayerController : MonoBehaviour
 
     public int BorderTop = 20;
 
+    private Transform body;
+
     // Use this for initialization
     void Start ()
     {
-		
-	}
+        body = transform.Find("Body");
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -52,19 +54,19 @@ public class PlayerController : MonoBehaviour
     {
         if (RelDirection == Vector3.left)
         {
-            transform.rotation = Quaternion.AngleAxis(-90, Vector3.forward);
+            body.rotation = Quaternion.AngleAxis(-90, Vector3.forward);
         }
         else if (RelDirection == Vector3.right)
         {
-            transform.rotation = Quaternion.AngleAxis(90, Vector3.forward);
+            body.rotation = Quaternion.AngleAxis(90, Vector3.forward);
         }
         else if (RelDirection == Vector3.up)
         {
-            transform.rotation = Quaternion.AngleAxis(180, Vector3.forward);
+            body.rotation = Quaternion.AngleAxis(180, Vector3.forward);
         }
         else if (RelDirection == Vector3.down)
         {
-            transform.rotation = Quaternion.AngleAxis(0, Vector3.forward);
+            body.rotation = Quaternion.AngleAxis(0, Vector3.forward);
         }
     }
 }
