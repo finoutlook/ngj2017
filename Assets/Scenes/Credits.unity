@@ -318,7 +318,7 @@ MonoBehaviour:
   m_Script: {fileID: -619905303, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1869055122}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 5
 --- !u!4 &1043355874
@@ -384,22 +384,22 @@ Prefab:
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 143
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 65
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 1567
+      value: 693
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 869
+      value: 909
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
@@ -434,16 +434,23 @@ Prefab:
     - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_Text
-      value: "Programming:\n\t\t\t\ta\n\t\t\t\tb\n\t\t\t\tb\n\nSound:\n\t\t\t\tc\n\nGraphics:\n\t\t\t\td"
+      value: "Programming:\n\t\t\t\tKeith Lia\n\t\t\t\tAndrew Borg Cordona\n\t\t\t\tTonny
+        Sato\n\t\t\t\tAsbjoern Hansen\n\t\t\t\tEmil Hoffmann\n\t\t\t\tGraham Findlay\nTester:\n\t\t\t\tMisbah
+        Fareed\nSound:\n\t\t\t\tn/a\nGame design:\n\t\t\t\tn/a"
       objectReference: {fileID: 0}
     - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_FontData.m_FontSize
-      value: 72
+      value: 58
       objectReference: {fileID: 0}
     - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_FontData.m_Alignment
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_FontData.m_MinSize
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
