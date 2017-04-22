@@ -55,21 +55,21 @@ public static class SearchableTypeExtensions
             case SearchableType.Grass:
                 return "Not next to Grass";
             case SearchableType.Building1:
-                return "Not next to Building1";
+                return "It's not the brown house";
             case SearchableType.Building2:
-                return "Not next to Building2";
+                return "It's not the green house";
             case SearchableType.Building3:
-                return "Not next to Building3";
+                return "It's not the blue house";
             case SearchableType.Building4:
-                return "Not next to Building4";
+                return "It's not the red house";
             case SearchableType.Building5:
-                return "Not next to Building5";
+                return "It's not the brown hotel";
             case SearchableType.Building6:
-                return "Not next to Building6";
+                return "It's not the green hotel";
             case SearchableType.Building7:
-                return "Not next to Building7";
+                return "It's not the red hotel";
             case SearchableType.Building8:
-                return "Not next to Building8";
+                return "It's not the blue hotel";
             case SearchableType.barrel_blue:
                 return "Not next to barrel_blue";
             case SearchableType.barrel_red:
