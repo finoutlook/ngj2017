@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Andrew : MonoBehaviour {
+public class MatchFinder : MonoBehaviour {
 
     public ParticleSystem ParticleSystem;
 
