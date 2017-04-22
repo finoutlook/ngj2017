@@ -73,7 +73,7 @@ public class ClueManager : MonoBehaviour
         return -1;
     }
 
-    public int GetCurrentClueId()
+    public int GetCurrentClue()
     {
         return currentClue;
     }
