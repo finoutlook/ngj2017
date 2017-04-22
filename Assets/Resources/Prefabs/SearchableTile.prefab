@@ -87,6 +87,7 @@ MonoBehaviour:
   IsPrize: 0
   IsDecorationTile: 0
   ClueDescription: 
+  IsFound: 0
 --- !u!114 &114573694845871378
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,6 +114,11 @@ MonoBehaviour:
   Building6: {fileID: 21300000, guid: cbf069652d567b0448fce02797d22ecf, type: 3}
   Building7: {fileID: 21300000, guid: 8a6433b03b56e214b97e8775b7848a09, type: 3}
   Building8: {fileID: 21300000, guid: 264afbfe2c8cc6549b2b3f7a25edda4a, type: 3}
+  barrel_red: {fileID: 21300000, guid: f01b96ad94906b34f897a78f1f89f751, type: 3}
+  barrel_blue: {fileID: 21300000, guid: 54a436ce88357214c8203a069fadf2c0, type: 3}
+  tree_small: {fileID: 21300000, guid: 4cf5f93eccc71b2418309371e7649c9f, type: 3}
+  rock2: {fileID: 21300000, guid: 8900d47179cc1b745930153640f5ee63, type: 3}
+  cone_down: {fileID: 21300000, guid: 79c6a1ba820eca54083c5252426490a9, type: 3}
 --- !u!212 &212140167940435526
 SpriteRenderer:
   m_ObjectHideFlags: 1
