@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 public enum SearchableType
 {
@@ -22,5 +23,26 @@ public static class SearchableTypeExtensions
         }
 
         return false;
+    }
+
+    public static string GetClue(this SearchableType type)
+    {
+        switch (type)
+        {
+            case SearchableType.MayanHouse0:
+                return "Not next to MayanHouse0";
+            case SearchableType.MayanHouse1:
+                return "Not next to MayanHouse1";
+            case SearchableType.MayanHouse2:
+                return "Not next to MayanHouse2";
+            case SearchableType.MayanHouse3:
+                return "Not next to MayanHouse3";
+            case SearchableType.MayanHouse4:
+                return "Not next to MayanHouse4";
+            case SearchableType.Grass:
+                return "Not next to Grass";
+            default:
+                throw new ArgumentOutOfRangeException("type", type, null);
+        }
     }
 }

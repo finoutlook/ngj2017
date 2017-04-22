@@ -157,7 +157,7 @@ public class MapController : MonoBehaviour
         tileManager.IsRoad = false;
         tileManager.IsPrize = false;
         tileManager.IsDecorationTile = sectionType.IsDecoration();
-        tileManager.ClueDescription = string.Format("NOT next to the {0}", sectionType);
+        tileManager.ClueDescription = sectionType.GetClue();
 
         return tile;
     }
