@@ -225,7 +225,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 3.1997995
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -364,7 +364,7 @@ Prefab:
     - target: {fileID: 114258178422258276, guid: f74bbe35c6db0a848a2cbd084662a2f0,
         type: 2}
       propertyPath: Speed
-      value: 0.15
+      value: 0.12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74bbe35c6db0a848a2cbd084662a2f0, type: 2}
@@ -400,9 +400,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ParticleSystem: {fileID: 1416400053}
-  MaxX: 6
+  MaxX: 50
   MinX: 0
-  MaxY: 6
+  MaxY: 30
   MinY: 0
   ClueManager: {fileID: 880699951}
   MapController: {fileID: 2052311699}
@@ -505,6 +505,16 @@ Prefab:
         type: 2}
       propertyPath: m_FontData.m_FontSize
       value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 224393334943264462, guid: c1be0b3c1ee93814db36cce13dfae0ae,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -527
+      objectReference: {fileID: 0}
+    - target: {fileID: 224393334943264462, guid: c1be0b3c1ee93814db36cce13dfae0ae,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 111
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1be0b3c1ee93814db36cce13dfae0ae, type: 2}
