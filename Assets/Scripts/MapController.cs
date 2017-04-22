@@ -75,7 +75,7 @@ public class MapController : MonoBehaviour
 
     private float CalculateWorldRowIndex(int rowIndex, int numberOfRows)
     {
-        return numberOfRows - rowIndex;
+        return numberOfRows - rowIndex -1;
     }
 
     // Update is called once per frame
