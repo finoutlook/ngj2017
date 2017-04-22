@@ -87,6 +87,7 @@ MonoBehaviour:
   IsPrize: 0
   IsDecorationTile: 0
   ClueDescription: 
+  IsFound: 0
 --- !u!114 &114097154019663484
 MonoBehaviour:
   m_ObjectHideFlags: 1

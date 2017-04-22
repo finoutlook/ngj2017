@@ -361,6 +361,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114258178422258276, guid: f74bbe35c6db0a848a2cbd084662a2f0,
+        type: 2}
+      propertyPath: Speed
+      value: 0.15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74bbe35c6db0a848a2cbd084662a2f0, type: 2}
   m_IsPrefabParent: 0
@@ -375,6 +380,7 @@ GameObject:
   - component: {fileID: 880699948}
   - component: {fileID: 880699951}
   - component: {fileID: 880699950}
+  - component: {fileID: 880699952}
   m_Layer: 0
   m_Name: Scripts
   m_TagString: Untagged
@@ -438,6 +444,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextChanger: {fileID: 880699950}
+--- !u!114 &880699952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 880699947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41edac882efa8d44af2283257e45fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeInSeconds: 120
+  uiText: {fileID: 1241009979}
 --- !u!1001 &891171323
 Prefab:
   m_ObjectHideFlags: 0
@@ -477,9 +496,25 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114487427607845200, guid: c1be0b3c1ee93814db36cce13dfae0ae,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    - target: {fileID: 114487427607845200, guid: c1be0b3c1ee93814db36cce13dfae0ae,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 60
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1be0b3c1ee93814db36cce13dfae0ae, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1241009979 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114487427607845200, guid: c1be0b3c1ee93814db36cce13dfae0ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 891171323}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!4 &1416400051 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3,

@@ -3,25 +3,25 @@ using System.Collections.Generic;
 
 public enum SearchableType
 {
-    MayanHouse0 = 61,
-    MayanHouse1 = 62,
-    MayanHouse2 = 63,
-    MayanHouse3 = 64,
-    MayanHouse4 = 65,
-    Grass = 66,
-    Building1 = 67,
-    Building2 = 68,
-    Building3 = 69,
-    Building4 = 70,
-    Building5 = 71,
-    Building6 = 72,
-    Building7 = 73,
-    Building8 = 74,
-    barrel_red = 75,
-    barrel_blue = 76,
-    tree_small = 77,
-    rock2 = 78,
-    cone_down = 79
+    cone_down = 5,
+    MayanHouse0 = 11,
+    MayanHouse1 = 17,
+    barrel_blue = 18,
+    barrel_red = 19,
+    Building1 = 20,
+    Building2 = 21,
+    Building3 = 22,
+    MayanHouse2 = 23,
+    Building4 = 24,
+    Building5 = 25,
+    Building6 = 26,
+    Building7 = 27,
+    Building8 = 28,
+    MayanHouse3 = 29,
+    MayanHouse4 = 30,
+    Grass = 31,
+    rock2 = 32,
+    tree_small = 33
 }
 
 public static class SearchableTypeExtensions
