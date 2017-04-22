@@ -8,16 +8,6 @@ public class TextChanger : MonoBehaviour
     public Text uiText;
     public float fadeDuration = 1f;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
     public void Text(string text)
     {
         if (!string.IsNullOrEmpty(uiText.text))
