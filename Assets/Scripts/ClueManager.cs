@@ -20,15 +20,10 @@ public class ClueManager : MonoBehaviour
             {
                 TileManager tileManager = (TileManager) mapController.Tiles[i][j].GetComponent(typeof(TileManager));
 
-                if (!tileManager.IsRoad && !tileManager.IsPrize)
+                if (!tileManager.IsRoad && !tileManager.IsPrize && !tileManager.IsDecorationTile)
                 {
                     tilesLeft.TryGetValue(tileManager.TileId, out outVal);
                     tilesLeft[tileManager.TileId] = outVal + 1;
-
-                    if (!tileClues.ContainsKey(tileManager.TileId))
-                    {
-                        tileClues.Add(tileManager.TileId, tileManager.ClueDescription);
-                    }
                 }
             }
         }
@@ -73,7 +68,7 @@ public class ClueManager : MonoBehaviour
         return -1;
     }
 
-    public int GetCurrentClueId()
+    public int GetCurrentClue()
     {
         return currentClue;
     }
