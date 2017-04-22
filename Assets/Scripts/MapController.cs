@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class MapController : MonoBehaviour
 {
@@ -71,6 +72,19 @@ public class MapController : MonoBehaviour
                 tile.transform.localPosition = position;
             }
         }
+    }
+
+    public GameObject GetTileFromWorldCoordinates(Vector2 position)
+    {
+        var cellIndex = Convert.ToInt32(position.x);
+        var rowPosition = CalculateArrayRowIndex(Convert.ToInt32(position.y));
+
+        return Tiles[rowPosition][cellIndex];
+    }
+
+    private int CalculateArrayRowIndex(int xPosition)
+    {
+        return Tiles.Length - 1 - xPosition;
     }
 
     private float CalculateWorldRowIndex(int rowIndex, int numberOfRows)
