@@ -1,19 +1,17 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Andrew : MonoBehaviour {
 
-    public int MaxX = 3;
+    public ParticleSystem ParticleSystem;
+
+    public int MaxX = 2;
     public int MinX = 0;
-    public int MaxY = 3;
+    public int MaxY = 2;
     public int MinY = 0;
 
     public ClueManager ClueManager;
     public MapController MapController;
-
-
-    //int[,] sampleMap = new[,] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
 
     bool[,] zonesFound;
 
@@ -47,9 +45,9 @@ public class Andrew : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-
+        
         // get player location in our map grid
-        Point playerLocation = new Point(0, 3); // MapManager.GetPlayerLocation();
+        Point playerLocation = new Point(0, 1); // MapManager.GetPlayerLocation();
 
         // we return if the player location did not change
         if ( playerLocation.Equals( lastPlayerLocation ) )
@@ -61,7 +59,6 @@ public class Andrew : MonoBehaviour {
         int currentClue = ClueManager.GetCurrentClue();
 
         // check adjacent map items
-        //var map = sampleMap; // MapManager.GetMap();
         int tileUp = playerLocation.Y < MaxY ? GetTileClue(MapController.Tiles[playerLocation.X][playerLocation.Y + 1]) : -1;
         int tileDown = playerLocation.Y > MinY ? GetTileClue(MapController.Tiles[playerLocation.X][playerLocation.Y - 1]) : -1;
         int tileLeft = playerLocation.X > MinX ? GetTileClue(MapController.Tiles[playerLocation.X - 1][playerLocation.Y]): -1;
@@ -70,26 +67,42 @@ public class Andrew : MonoBehaviour {
         // see if any belongs to the clue
         if ( tileUp == currentClue && !zonesFound[playerLocation.X, playerLocation.Y + 1] )
         {
-            // mark zone found
-            zonesFound[playerLocation.X, playerLocation.Y + 1] = true;
-            // change the game object sprite to a different color
-            GameObject tileObject = GameObject.Find("test");
-            tileObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.5f);
-            // register zone is found for current clue
-            ClueManager.FoundOne(); // reduce counter/go to next clue/win game
-
+            ClueTileFound(playerLocation.X, playerLocation.Y + 1);
         }
         if ( tileDown == currentClue )
         {
-
+            ClueTileFound(playerLocation.X, playerLocation.Y - 1);
         }
         if ( tileLeft == currentClue )
         {
-
+            ClueTileFound(playerLocation.X - 1, playerLocation.Y);
         }
         if ( tileRight == currentClue )
         {
+            ClueTileFound(playerLocation.X + 1, playerLocation.Y);
+        }
+    }
 
+    private void ClueTileFound(int x, int y)
+    {
+        if (ClueManager.GetCurrentClue() == 999)
+        {
+            SceneManager.LoadScene("Win");
+        }
+        else
+        {
+            // mark zone found
+            zonesFound[x, y] = true;
+            // change the game object sprite to a different color
+            GameObject tileObject = MapController.Tiles[x][y];
+            tileObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.5f);
+            if (ParticleSystem != null)
+            {
+                ParticleSystem.transform.position = tileObject.transform.position;
+                ParticleSystem.Emit(20);
+            }
+            // register zone is found for current clue
+            ClueManager.FoundOne(); // reduce counter/go to next clue/win game
         }
     }
 
