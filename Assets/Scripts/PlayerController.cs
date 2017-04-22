@@ -5,13 +5,17 @@ public class PlayerController : MonoBehaviour
 {
     public float Speed = 0.5f;
 
+    public bool AutoPilotFeature = true;
+
+    private bool autoPilot = false;
+
     private Transform body;
 
     private MapController mapController;
 
     private GameObject[][] tiles;
 
-    private bool isDriving = false;
+    private bool isBetweenTiles = false;
 
     private Vector3 departureTile;
 
@@ -25,6 +29,10 @@ public class PlayerController : MonoBehaviour
 
     private float arrivalAngle;
 
+    private Vector3 lastDirection;
+
+    private Vector3 nextDirection;
+
     // Use this for initialization
     void Start ()
     {
@@ -36,51 +44,77 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update ()
     {
-        if (!isDriving)
+        var inputDirection = GetKey();
+
+        if (!isBetweenTiles)
         {
-            if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+            if (inputDirection != null)
             {
-                TryDrive(Vector3.left);
+                TryDrive(inputDirection ?? new Vector3());
             }
-            else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+            else if (autoPilot)
             {
-                TryDrive(Vector3.right);
-            }
-            else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
-            {
-                TryDrive(Vector3.up);
-            }
-            else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
-            {
-                TryDrive(Vector3.down);
+                if (!TryDrive(nextDirection))
+                {
+                    if (!TryDrive(lastDirection))
+                    {
+                        autoPilot = false;
+                    }
+                }
             }
         }
         else
         {
-            AutoDrive();
+            if (inputDirection != null)
+            {
+                nextDirection = inputDirection ?? new Vector3();
+            }
+            AutoDriveToNextTile();
         }
     }
 
-    private void AutoDrive()
+    private Vector3? GetKey()
+    {
+        if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
+        {
+            return Vector3.left;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.D))
+        {
+            return Vector3.right;
+        }
+        else if (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.W))
+        {
+            return Vector3.up;
+        }
+        else if (Input.GetKey(KeyCode.DownArrow) || Input.GetKey(KeyCode.S))
+        {
+            return Vector3.down;
+        }
+        return null;
+    }
+
+    private void AutoDriveToNextTile()
     {
         travelTime += Time.deltaTime;
+
+        // Destination tile reached?
         if (travelTime >= Speed)
         {
             transform.position = arrivalTile;
             body.rotation = Quaternion.AngleAxis(arrivalAngle, Vector3.forward);
-
-            isDriving = false;
+            isBetweenTiles = false;
         }
         else
         {
             var intermediatePosition = transform.position + thrust * (1 / Speed) * Time.deltaTime;
-            var intermediateAngle = departureAngle + (departureAngle - arrivalAngle) * (1 / Speed) * Time.deltaTime;
+            var intermediateAngle = departureAngle + (arrivalAngle - departureAngle ) * (1 / Speed) * Time.deltaTime;
             transform.position = intermediatePosition;
-            //body.rotation = Quaternion.AngleAxis(intermediateAngle, Vector3.forward);
+            body.rotation = Quaternion.AngleAxis(intermediateAngle, Vector3.forward);
         }
     }
 
-    private void TryDrive(Vector3 RelDirection)
+    private bool TryDrive(Vector3 RelDirection)
     {
         var newPosition = transform.position + RelDirection * 1;
         var newVector3 = new Vector3(newPosition.x, newPosition.y, 0);
@@ -89,33 +123,38 @@ public class PlayerController : MonoBehaviour
         // Forget moving if there is no roadsection
         if (sectionTypeAhead == null)
         {
-            return;
+            return false;
         }
 
         if (CanIGoThere(RelDirection, sectionTypeAhead))
         {
             DriveTo(RelDirection, newVector3);
+            return true;
         }
         else
         {
             // car crash
             print("Player Collision Detect");
+            return false;
         }
     }
 
     private void DriveTo(Vector3 RelDirection, Vector3 newPosition)
     {
+        lastDirection = RelDirection;
         arrivalTile = newPosition;
         var roadSectionType = GetRoadSectionType(newPosition);
         arrivalAngle = GetAngle(RelDirection, roadSectionType);
         thrust = RelDirection;
         departureTile = transform.position;
-        departureAngle = transform.rotation.z;
-        body.rotation = Quaternion.AngleAxis(GetAngleForDirection(RelDirection), Vector3.forward);
+        departureAngle = GetAngleForDirection(RelDirection);
+        body.rotation = Quaternion.AngleAxis(departureAngle, Vector3.forward);
         travelTime = 0;
 
-        isDriving = true;
-        AutoDrive();
+        nextDirection = RelDirection;
+        isBetweenTiles = true;
+        autoPilot = AutoPilotFeature;
+        AutoDriveToNextTile();
     }
 
     private int GetAngle(Vector3 RelDirection, RoadSectionType? roadSectionType)
