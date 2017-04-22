@@ -432,6 +432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiText: {fileID: 438786147}
   fadeDuration: 1
+  currentText: 
 --- !u!114 &880699951
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -515,6 +516,11 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 111
+      objectReference: {fileID: 0}
+    - target: {fileID: 114621131011231018, guid: c1be0b3c1ee93814db36cce13dfae0ae,
+        type: 2}
+      propertyPath: m_Text
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1be0b3c1ee93814db36cce13dfae0ae, type: 2}
