@@ -18,34 +18,34 @@ public class MapController : MonoBehaviour
         Tiles = new[]
         {
             new [] {
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.Building1),
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.MayanHouse2),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.Building1, false),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.MayanHouse2, false),
            },
            new [] {
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
                CreateRoadTile(RoadSectionType.RoadCornerTopLeft),
                CreateRoadTile(RoadSectionType.RoadHorizontal),
                CreateRoadTile(RoadSectionType.RoadBranchDown),
                CreateRoadTile(RoadSectionType.RoadHorizontal),
                CreateRoadTile(RoadSectionType.RoadCornerTopRight),
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
            },
            new [] {
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
                CreateRoadTile(RoadSectionType.RoadVertical),
-               CreateSearchableTile(SearchableType.MayanHouse3),
+               CreateSearchableTile(SearchableType.MayanHouse3, true),
                CreateRoadTile(RoadSectionType.RoadVertical),
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
                CreateRoadTile(RoadSectionType.RoadBranchRight),
                CreateRoadTile(RoadSectionType.RoadCornerTopRight),
            },
            new [] {
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
                CreateRoadTile(RoadSectionType.RoadBranchRight),
                CreateRoadTile(RoadSectionType.RoadHorizontal),
                CreateRoadTile(RoadSectionType.RoadCross),
@@ -54,31 +54,31 @@ public class MapController : MonoBehaviour
                CreateRoadTile(RoadSectionType.RoadVertical),
            },
            new [] {
-               CreateSearchableTile(SearchableType.MayanHouse1),
+               CreateSearchableTile(SearchableType.MayanHouse1, false),
                CreateRoadTile(RoadSectionType.RoadVertical),
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
                CreateRoadTile(RoadSectionType.RoadVertical),
-               CreateSearchableTile(SearchableType.MayanHouse4),
+               CreateSearchableTile(SearchableType.MayanHouse4, false),
                CreateRoadTile(RoadSectionType.RoadBranchRight),
                CreateRoadTile(RoadSectionType.RoadCornerBottomRight),
            },
            new [] {
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
                CreateRoadTile(RoadSectionType.RoadCornerBottomLeft),
                CreateRoadTile(RoadSectionType.RoadHorizontal),
                CreateRoadTile(RoadSectionType.RoadBranchUp),
                CreateRoadTile(RoadSectionType.RoadHorizontal),
                CreateRoadTile(RoadSectionType.RoadCornerBottomRight),
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
            },
            new [] {
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.Grass),
-               CreateSearchableTile(SearchableType.MayanHouse0),
-               CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.Grass, false),
+               CreateSearchableTile(SearchableType.MayanHouse0, false),
+               CreateSearchableTile(SearchableType.Grass, false),
            },
         };
     }
@@ -146,16 +146,16 @@ public class MapController : MonoBehaviour
         return roadTile;
     }
 
-    private GameObject CreateSearchableTile(SearchableType sectionType)
+    private GameObject CreateSearchableTile(SearchableType sectionType, bool isPrize)
     {
         var tile = (GameObject)Instantiate(Resources.Load("prefabs/SearchableTile"));
         tile.transform.parent = transform;
         tile.GetComponentInChildren<SearchableScript>().SectionType = sectionType;
 
         TileManager tileManager = (TileManager)tile.GetComponent(typeof(TileManager));
-        tileManager.TileId = (int) sectionType;
+        tileManager.TileId = isPrize ? 999 : (int) sectionType;
         tileManager.IsRoad = false;
-        tileManager.IsPrize = false;
+        tileManager.IsPrize = isPrize;
         tileManager.IsDecorationTile = sectionType.IsDecoration();
         tileManager.ClueDescription = sectionType.GetClue();
 
