@@ -50,7 +50,13 @@ public class PlayerController : MonoBehaviour
         {
             if (inputDirection != null)
             {
-                TryDrive(inputDirection ?? new Vector3());
+                if ( !TryDrive(inputDirection ?? new Vector3()) )
+                {
+                    if (!TryDrive(lastDirection))
+                    {
+                        autoPilot = false;
+                    }
+                }
             }
             else if (autoPilot)
             {

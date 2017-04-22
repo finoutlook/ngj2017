@@ -364,7 +364,7 @@ Prefab:
     - target: {fileID: 114258178422258276, guid: f74bbe35c6db0a848a2cbd084662a2f0,
         type: 2}
       propertyPath: Speed
-      value: 0.12
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f74bbe35c6db0a848a2cbd084662a2f0, type: 2}
@@ -396,7 +396,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 880699947}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47c008bfeb56de440806323d081994bd, type: 3}
+  m_Script: {fileID: 11500000, guid: 88281be00a23fb34ea67c33f47c6295f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ParticleSystem: {fileID: 1416400053}
