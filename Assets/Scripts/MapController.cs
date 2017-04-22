@@ -13,4 +13,9 @@ public class MapController : MonoBehaviour
     private void Update()
     {
     }
+
+    private GameObject CreateRoadTile(RoadSectionType sectionType)
+    {
+        return (GameObject)Instantiate(Resources.Load("prefabs/RoadTile"));
+    }
 }
