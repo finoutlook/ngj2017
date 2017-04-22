@@ -1,4 +1,4 @@
-﻿using System.ComponentModel;
+﻿using System.Reflection;
 using UnityEngine;
 
 [ExecuteInEditMode]
@@ -9,73 +9,33 @@ public class RoadScript : MonoBehaviour
     public RoadSectionType SectionType;
 
     [Header("Sprites")]
-    public Sprite CurveLeft;
+    public Sprite RoadHorizontal;
+    public Sprite RoadVertical;
+    
+    public Sprite RoadCornerTopLeft;
+    public Sprite RoadCornerTopRight;
+    public Sprite RoadCornerBottomLeft;
+    public Sprite RoadCornerBottomRight;
+    
+    public Sprite RoadBranchDown;
+    public Sprite RoadBranchUp;
+    public Sprite RoadBranchLeft;
+    public Sprite RoadBranchRight;
+    
+    public Sprite RoadCross;
+    
+    public Sprite RoadDeadEndUp;
+    public Sprite RoadDeadEndDown;
+    public Sprite RoadDeadEndLeft;
+    public Sprite RoadDeadEndRight;
 
-    public Sprite CurveRight;
-
-    public Sprite CurveFromLeft;
-
-    public Sprite CurveFromRight;
-
-    public Sprite DeadEnd;
-
-    public Sprite DeadEndStart;
-
-    public Sprite FourWayIntersection;
-
-    public Sprite Straight;
-
-    public Sprite StraightCanal;
-
-    public Sprite StraightLake;
-
-    public Sprite StraightRiver;
-
-    public Sprite TStart;
-
-    public Sprite TEnd;
-
-    public Sprite TLeft;
-
-    public Sprite TRight;
 
     public Sprite GetSprite(RoadSectionType sectionType)
     {
-        switch (sectionType)
-        {
-            case RoadSectionType.Left:
-                return CurveLeft;
-            case RoadSectionType.Right:
-                return CurveRight;
-            case RoadSectionType.FromLeft:
-                return CurveFromLeft;
-            case RoadSectionType.FromRight:
-                return CurveFromRight;
-            case RoadSectionType.DeadEnd:
-                return DeadEnd;
-            case RoadSectionType.DeadEndStart:
-                return DeadEndStart;
-            case RoadSectionType.Straight:
-                return Straight;
-            case RoadSectionType.TStart:
-                return TStart;
-            case RoadSectionType.TEnd:
-                return TEnd;
-            case RoadSectionType.TRight:
-                return TRight;
-            case RoadSectionType.TLeft:
-                return TLeft;
-            case RoadSectionType.FourWayIntersection:
-                return FourWayIntersection;
-            case RoadSectionType.StraightLake:
-                return StraightLake;
-            case RoadSectionType.StraightRiver:
-                return StraightRiver;
-            case RoadSectionType.StraightCanal:
-                return StraightCanal;
-            default:
-                throw new InvalidEnumArgumentException(string.Format("Type {0} is not mapped to a sprite.", sectionType));
-        }
+        var field = GetType().GetField(sectionType.ToString(), BindingFlags.Instance | BindingFlags.Public);
+        var sprite = (Sprite) field.GetValue(this);
+
+        return sprite;
     }
 
     // Use this for initialization

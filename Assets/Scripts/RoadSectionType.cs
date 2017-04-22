@@ -1,34 +1,22 @@
 ﻿public enum RoadSectionType
 {
-    Straight = 0,
+    RoadHorizontal = 1,
+    RoadVertical = 2,
 
-    Left = 1,
+    RoadCornerTopLeft = 3,
+    RoadCornerTopRight = 4,
+    RoadCornerBottomLeft = 5,
+    RoadCornerBottomRight = 6,
 
-    Right = 2,
+    RoadBranchDown = 7,
+    RoadBranchUp = 8,
+    RoadBranchLeft = 9,
+    RoadBranchRight = 10,
 
-    FromLeft = 3,
+    RoadCross = 11,
 
-    FromRight = 4,
-
-    DeadStart = 5,
-
-    DeadEnd = 6,
-
-    FourWayIntersection = 7,
-
-    StraightLake = 8,
-
-    StraightRiver = 9,
-
-    StraightCanal = 10,
-
-    TStart = 11,
-
-    TEnd = 12,
-
-    TLeft = 13,
-
-    TRight = 14,
-
-    DeadEndStart = 15
+    RoadDeadEndUp = 12,
+    RoadDeadEndDown = 13,
+    RoadDeadEndLeft = 14,
+    RoadDeadEndRight = 15,
 }
