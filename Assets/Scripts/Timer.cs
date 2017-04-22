@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
@@ -21,6 +22,11 @@ public class Timer : MonoBehaviour {
 	void Update () {
         timeRemainingInMilliseconds -= (int)Mathf.Round(Time.deltaTime * 1000);
         
+        if ( timeRemainingInMilliseconds <= 0 )
+        {
+            SceneManager.LoadScene("Lose");
+        }
+
         TimeSpan t = TimeSpan.FromMilliseconds(timeRemainingInMilliseconds);
 
         //here backslash is must to tell that colon is

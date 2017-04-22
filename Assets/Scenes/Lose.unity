@@ -268,17 +268,17 @@ Prefab:
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 150
+      value: 277
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_SizeDelta.x
-      value: 901
+      value: 1092
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 392
+      value: 142
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
@@ -313,7 +313,7 @@ Prefab:
     - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_Text
-      value: You have lost
+      value: It is lost. It is not there
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6513a1ec72985e3449635665de259e6f, type: 2}
@@ -586,6 +586,7 @@ RectTransform:
   - {fileID: 912808878}
   - {fileID: 1165611448}
   - {fileID: 1208553274}
+  - {fileID: 2086897583}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -745,3 +746,126 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2086897582
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1311416596}
+    m_Modifications:
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -32
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 901
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 432
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_Text
+      value: 'Your car slowly rolls to a stop as you run out of fuel...
+
+        and motivation.
+
+        There seems to be no where else to search.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150757188974844, guid: 6513a1ec72985e3449635665de259e6f, type: 2}
+      propertyPath: m_Name
+      value: InfoText (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 72
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6513a1ec72985e3449635665de259e6f, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &2086897583 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+    type: 2}
+  m_PrefabInternal: {fileID: 2086897582}

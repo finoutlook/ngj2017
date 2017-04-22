@@ -286,6 +286,7 @@ RectTransform:
   - {fileID: 1328919063}
   - {fileID: 542710755}
   - {fileID: 2128434793}
+  - {fileID: 968930379}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -428,6 +429,125 @@ GameObject:
   m_PrefabParentObject: {fileID: 1048621073590186, guid: 00f027d8c9e962c4586cfa174fdae94a,
     type: 2}
   m_PrefabInternal: {fileID: 542710754}
+--- !u!1001 &968930378
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 375794523}
+    m_Modifications:
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -221
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 1526
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_SizeDelta.y
+      value: 171
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_Text
+      value: You don't have much time. Fuel for a few minutes of searching at most
+      objectReference: {fileID: 0}
+    - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
+        type: 2}
+      propertyPath: m_FontData.m_FontSize
+      value: 72
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150757188974844, guid: 6513a1ec72985e3449635665de259e6f, type: 2}
+      propertyPath: m_Name
+      value: InfoText2
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 6513a1ec72985e3449635665de259e6f, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &968930379 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
+    type: 2}
+  m_PrefabInternal: {fileID: 968930378}
 --- !u!1001 &1328919062
 Prefab:
   m_ObjectHideFlags: 0
@@ -483,7 +603,7 @@ Prefab:
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: 167
+      value: 219
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
@@ -493,7 +613,7 @@ Prefab:
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_SizeDelta.y
-      value: 667
+      value: 563
       objectReference: {fileID: 0}
     - target: {fileID: 224525812398964546, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
@@ -530,13 +650,11 @@ Prefab:
       propertyPath: m_Text
       value: 'Something is missing...
 
-        I''ve never quite been sure what or why.
+        You''ve never quite been sure what or why.
 
         But something is definitely... not there.
 
-        Yesterday I quit my job. I packed my things.
-
-        I got in the car... and started driving.'
+        Yesterday you quit your job, packed, got in the car and started driving...'
       objectReference: {fileID: 0}
     - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
