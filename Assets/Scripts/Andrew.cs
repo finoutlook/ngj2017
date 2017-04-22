@@ -9,6 +9,8 @@ public class Andrew : MonoBehaviour {
     public int MaxY = 3;
     public int MinY = 0;
 
+    public ClueManager ClueManager;
+
 
     int[,] sampleMap = new[,] { { 0, 0, 0 }, { 0, 0, 0 }, { 0, 0, 0 } };
 
@@ -32,6 +34,7 @@ public class Andrew : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         var map = sampleMap; // MapManager.GetMap();
+        //var clueId = ClueManager.AnalyzeMap(map??)
         zonesFound = new bool[map.GetLength(0), map.GetLength(1)];
         for ( int i = 0; i < map.GetLength(0); i++ )
         {
