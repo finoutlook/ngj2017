@@ -16,10 +16,10 @@ public class SelectionManager : MonoBehaviour
 	void Update ()
     {
         if ((Input.GetKeyDown(KeyCode.UpArrow) ||
-            (Input.GetKeyDown(KeyCode.DownArrow) ||
-            (Input.GetKeyDown(KeyCode.LeftArrow) ||
-            (Input.GetKeyDown(KeyCode.RightArrow)) &&
-            _selectionMade == false)
+             Input.GetKeyDown(KeyCode.DownArrow) ||
+             Input.GetKeyDown(KeyCode.LeftArrow) ||
+             Input.GetKeyDown(KeyCode.RightArrow)) &&
+             _selectionMade == false)
         {
             print("key was pressed");
             UnityEngine.EventSystems.EventSystem.current.SetSelectedGameObject(FirstButton);
