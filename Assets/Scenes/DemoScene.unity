@@ -108,6 +108,63 @@ NavMeshSettings:
     tileSize: 256
     accuratePlacement: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &218129586
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1509117216}
+    m_Modifications:
+    - target: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198376522660062708, guid: 1fd342bf91390584d89c84e96c8da0b3,
+        type: 2}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 198376522660062708, guid: 1fd342bf91390584d89c84e96c8da0b3,
+        type: 2}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198376522660062708, guid: 1fd342bf91390584d89c84e96c8da0b3,
+        type: 2}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1fd342bf91390584d89c84e96c8da0b3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &258944345
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,7 +393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47c008bfeb56de440806323d081994bd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ParticleSystem: {fileID: 0}
+  ParticleSystem: {fileID: 1416400053}
   MaxX: 6
   MinX: 0
   MaxY: 6
@@ -423,6 +480,45 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1be0b3c1ee93814db36cce13dfae0ae, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1416400051 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4702523725169430, guid: 1fd342bf91390584d89c84e96c8da0b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 218129586}
+--- !u!198 &1416400053 stripped
+ParticleSystem:
+  m_PrefabParentObject: {fileID: 198376522660062708, guid: 1fd342bf91390584d89c84e96c8da0b3,
+    type: 2}
+  m_PrefabInternal: {fileID: 218129586}
+--- !u!1 &1509117215
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1509117216}
+  m_Layer: 0
+  m_Name: ParticleEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1509117216
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1509117215}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.5, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1416400051}
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1584538424 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4842135470391886, guid: c1be0b3c1ee93814db36cce13dfae0ae,

@@ -106,7 +106,7 @@ public class MatchFinder : MonoBehaviour {
             tileObject.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.5f);
             if (ParticleSystem != null)
             {
-                ParticleSystem.transform.position = tileObject.transform.position;
+                ParticleSystem.transform.position = tileObject.transform.position + new Vector3(0.5f, 0.5f, 0f);
                 ParticleSystem.Emit(20);
             }
             // register zone is found for current clue
