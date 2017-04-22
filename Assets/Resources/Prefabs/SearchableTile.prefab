@@ -100,25 +100,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SectionType: 3
-  MayanHouse0: {fileID: 21300034, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  MayanHouse1: {fileID: 21300022, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  MayanHouse2: {fileID: 21300058, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  MayanHouse3: {fileID: 21300046, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  MayanHouse4: {fileID: 21300060, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
+  MayanHouse0: {fileID: 21300034, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  MayanHouse1: {fileID: 21300046, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  MayanHouse2: {fileID: 21300058, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  MayanHouse3: {fileID: 21300060, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  MayanHouse4: {fileID: 21300022, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
   Grass: {fileID: 0}
-  Building1: {fileID: 21300044, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  Building2: {fileID: 21300040, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  Building3: {fileID: 21300042, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  Building4: {fileID: 21300048, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  Building5: {fileID: 21300056, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  Building6: {fileID: 21300050, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  Building7: {fileID: 21300052, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  Building8: {fileID: 21300054, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  barrel_red: {fileID: 21300038, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  barrel_blue: {fileID: 21300036, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  tree_small: {fileID: 21300064, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  rock2: {fileID: 21300062, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
-  cone_down: {fileID: 21300010, guid: fe1a0a08af1d3c54f8e9c51ca1119bfc, type: 3}
+  Building1: {fileID: 21300040, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  Building2: {fileID: 21300042, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  Building3: {fileID: 21300044, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  Building4: {fileID: 21300048, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  Building5: {fileID: 21300050, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  Building6: {fileID: 21300052, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  Building7: {fileID: 21300054, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  Building8: {fileID: 21300056, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  barrel_red: {fileID: 21300038, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  barrel_blue: {fileID: 21300036, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  tree_small: {fileID: 21300064, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  rock2: {fileID: 21300062, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
+  cone_down: {fileID: 21300010, guid: 78eae6c808e3a914d82a63f79c8ae2f1, type: 3}
 --- !u!212 &212140167940435526
 SpriteRenderer:
   m_ObjectHideFlags: 1
