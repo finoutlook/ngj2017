@@ -2,6 +2,7 @@
 using System.ComponentModel;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class RoadSectionScript : MonoBehaviour
 {
     public string Section;
@@ -10,6 +11,15 @@ public class RoadSectionScript : MonoBehaviour
 
     private void CreateSection()
     {
+        if (tiles != null)
+        {
+            foreach (var tile in tiles)
+            {
+                tile.transform.parent = null;
+                GameObject.Destroy(tile);
+            }
+        }
+
         tiles = new GameObject[Section.Length];
         for (var i = 0; i < Section.Length; i++)
         {
@@ -46,12 +56,9 @@ public class RoadSectionScript : MonoBehaviour
             }
 
             var tile = (GameObject)Instantiate(Resources.Load("Prefabs/RoadTile"));
-            Debug.Log(tile.transform.position);
             tile.transform.parent = transform;
-            Debug.Log(tile.transform.position);
-            //tile.transform.localPosition = Vector3.zero;
-            //tile.transform.position = new Vector2(0, i - 1);
-            Debug.Log(tile.transform.position);
+            tile.transform.localPosition = Vector3.zero;
+            tile.transform.localPosition = new Vector2(0, i - 1);
             tile.GetComponent<RoadScript>().SectionType = type;
 
             tiles[i] = tile;
