@@ -81,10 +81,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 141e91dbba7b8cd4080115d422bb6726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BorderLeft: 0
-  BorderRight: 20
-  BorderBottom: 0
-  BorderTop: 20
+  Speed: 0.3
 --- !u!212 &212159822678389406
 SpriteRenderer:
   m_ObjectHideFlags: 1
