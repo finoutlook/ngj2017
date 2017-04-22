@@ -13,11 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private MapController mapController;
 
-    private GameObject[][] tiles;
-
     private bool isBetweenTiles = false;
-
-    private Vector3 departureTile;
 
     private Vector3 arrivalTile;
 
@@ -38,7 +34,6 @@ public class PlayerController : MonoBehaviour
     {
         body = transform.Find("Body");
         mapController = GameObject.FindObjectOfType<MapController>();
-        tiles = mapController.Tiles;
     }
 
     // Update is called once per frame
@@ -76,6 +71,10 @@ public class PlayerController : MonoBehaviour
                 nextDirection = inputDirection ?? new Vector3();
             }
             AutoDriveToNextTile();
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            GetComponent<AudioSource>().Play();
         }
     }
 
@@ -152,7 +151,6 @@ public class PlayerController : MonoBehaviour
         var roadSectionType = GetRoadSectionType(newPosition);
         arrivalAngle = GetAngle(RelDirection, roadSectionType);
         thrust = RelDirection;
-        departureTile = transform.position;
         departureAngle = GetAngleForDirection(RelDirection);
         body.rotation = Quaternion.AngleAxis(departureAngle, Vector3.forward);
         travelTime = 0;
