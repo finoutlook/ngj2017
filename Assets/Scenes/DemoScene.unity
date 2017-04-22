@@ -445,6 +445,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TextChanger: {fileID: 880699950}
+  matchesText: {fileID: 1236081961}
 --- !u!114 &880699952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -537,6 +538,12 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c1be0b3c1ee93814db36cce13dfae0ae, type: 2}
   m_IsPrefabParent: 0
+--- !u!114 &1236081961 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114571421757609370, guid: c1be0b3c1ee93814db36cce13dfae0ae,
+    type: 2}
+  m_PrefabInternal: {fileID: 891171323}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!114 &1241009979 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114487427607845200, guid: c1be0b3c1ee93814db36cce13dfae0ae,

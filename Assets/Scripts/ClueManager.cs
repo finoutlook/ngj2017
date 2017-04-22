@@ -1,9 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ClueManager : MonoBehaviour
 {
     public TextChanger TextChanger;
+    public Text matchesText;
 
     private Dictionary<int, int> tilesLeft = new Dictionary<int, int>();
     private Dictionary<int, string> tileClues = new Dictionary<int, string>();
@@ -15,9 +17,9 @@ public class ClueManager : MonoBehaviour
     public int AnalyzeMap(MapController mapController)
     {
         int outVal;
-        for (int i = 0; i < mapController.Tiles.Length - 1; ++i)
+        for (int i = 0; i < mapController.Tiles.Length; ++i)
         {
-            for (int j = 0; j < mapController.Tiles[i].Length - 1; ++j)
+            for (int j = 0; j < mapController.Tiles[i].Length; ++j)
             {
                 TileManager tileManager = (TileManager) mapController.Tiles[i][j].GetComponent(typeof(TileManager));
 
@@ -49,6 +51,8 @@ public class ClueManager : MonoBehaviour
 
         tilesLeft[currentClue] =  outVal - 1;
 
+        matchesText.text = tilesLeft[currentClue].ToString();
+
         outVal-=1;
         if (outVal > 0)
         {
@@ -66,6 +70,7 @@ public class ClueManager : MonoBehaviour
             if (tilesLeft[i] > 0)
             {
                 TextChanger.Text(tileClues[i]);
+                matchesText.text = tilesLeft[i].ToString();
                 currentClue = i;
                 Debug.Log("Next clue: " + currentClue);
                 return i;
@@ -73,6 +78,7 @@ public class ClueManager : MonoBehaviour
         }
 
         currentClue = WINNING_TILE_ID;
+        matchesText.text = "???";
         Debug.Log("Final clue: " + currentClue);
         return currentClue;
     }
