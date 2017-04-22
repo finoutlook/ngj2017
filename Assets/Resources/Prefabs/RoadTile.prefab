@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4257511318840178}
+  - component: {fileID: 114050050348255386}
   m_Layer: 0
   m_Name: RoadTile
   m_TagString: Untagged
@@ -70,6 +71,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114050050348255386
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1785510290096998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3f187613916174480a473d31735c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TileId: 0
+  IsRoad: 0
+  IsPrize: 0
+  IsDecorationTile: 0
+  ClueDescription: 
 --- !u!114 &114097154019663484
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -131,7 +148,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300046, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  m_Sprite: {fileID: 21300172, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

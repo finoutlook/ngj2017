@@ -136,6 +136,13 @@ public class MapController : MonoBehaviour
         roadTile.transform.parent = transform;
         roadTile.GetComponentInChildren<RoadScript>().SectionType = sectionType;
 
+        TileManager tileManager = (TileManager)roadTile.GetComponent(typeof(TileManager));
+        tileManager.TileId = (int)sectionType;
+        tileManager.IsRoad = true;
+        tileManager.IsPrize = false;
+        tileManager.IsDecorationTile = false;
+        tileManager.ClueDescription = "";
+
         return roadTile;
     }
 
@@ -144,6 +151,13 @@ public class MapController : MonoBehaviour
         var tile = (GameObject)Instantiate(Resources.Load("prefabs/SearchableTile"));
         tile.transform.parent = transform;
         tile.GetComponentInChildren<SearchableScript>().SectionType = sectionType;
+
+        TileManager tileManager = (TileManager)tile.GetComponent(typeof(TileManager));
+        tileManager.TileId = (int) sectionType;
+        tileManager.IsRoad = false;
+        tileManager.IsPrize = false;
+        tileManager.IsDecorationTile = sectionType.IsDecoration();
+        tileManager.ClueDescription = sectionType.GetClue();
 
         return tile;
     }

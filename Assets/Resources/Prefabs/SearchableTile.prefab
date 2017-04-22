@@ -19,6 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4283730692278068}
+  - component: {fileID: 114097498838386306}
   m_Layer: 0
   m_Name: SearchableTile
   m_TagString: Untagged
@@ -70,6 +71,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114097498838386306
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1277031038441190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d3f187613916174480a473d31735c82, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TileId: 0
+  IsRoad: 0
+  IsPrize: 0
+  IsDecorationTile: 0
+  ClueDescription: 
 --- !u!114 &114573694845871378
 MonoBehaviour:
   m_ObjectHideFlags: 1
