@@ -18,9 +18,9 @@ public class MapController : MonoBehaviour
         Tiles = new[]
         {
             new [] {
-                CreateSearchableTile(SearchableType.Grass),
                CreateSearchableTile(SearchableType.Grass),
                CreateSearchableTile(SearchableType.Grass),
+               CreateSearchableTile(SearchableType.Building1),
                CreateSearchableTile(SearchableType.Grass),
                CreateSearchableTile(SearchableType.Grass),
                CreateSearchableTile(SearchableType.Grass),
