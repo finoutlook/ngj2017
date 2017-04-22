@@ -25,6 +25,11 @@ public class ClueManager : MonoBehaviour
                 {
                     tilesLeft.TryGetValue(tileManager.TileId, out outVal);
                     tilesLeft[tileManager.TileId] = outVal + 1;
+
+                    if (!tileClues.ContainsKey(tileManager.TileId))
+                    {
+                        tileClues[tileManager.TileId] = tileManager.ClueDescription;
+                    }
                 }
             }
         }
