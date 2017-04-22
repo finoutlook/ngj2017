@@ -39,7 +39,7 @@ public class MapController : MonoBehaviour
            },
            new [] {
                CreateRoadTile(RoadSectionType.RoadVertical),
-               null,
+               CreateSearchableTile(SearchableType.Grass),
                CreateRoadTile(RoadSectionType.RoadVertical),
                null,
                CreateRoadTile(RoadSectionType.RoadVertical),
@@ -90,5 +90,14 @@ public class MapController : MonoBehaviour
         roadTile.GetComponentInChildren<RoadScript>().SectionType = sectionType;
 
         return roadTile;
+    }
+
+    private GameObject CreateSearchableTile(SearchableType sectionType)
+    {
+        var tile = (GameObject)Instantiate(Resources.Load("prefabs/SearchableTile"));
+        tile.transform.parent = transform;
+        tile.GetComponentInChildren<SearchableScript>().SectionType = sectionType;
+
+        return tile;
     }
 }
