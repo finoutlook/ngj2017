@@ -9,6 +9,7 @@ public class ClueManager : MonoBehaviour
     private Dictionary<int, string> tileClues = new Dictionary<int, string>();
 
     private int currentClue = 0;
+    private const int WINNING_TILE_ID = 999;
     
 
     public int AnalyzeMap(MapController mapController)
@@ -65,7 +66,8 @@ public class ClueManager : MonoBehaviour
             }
         }
 
-        return -1;
+        currentClue = WINNING_TILE_ID;
+        return currentClue;
     }
 
     public int GetCurrentClue()
