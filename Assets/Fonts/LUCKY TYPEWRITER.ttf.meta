@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: e17b90847cd5a354d90d6012fa167ab7
+timeCreated: 1492885170
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: LUCKY TYPEWRITER
+  fontNames:
+  - LUCKY TYPEWRITER
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
