@@ -1,67 +1,79 @@
-﻿using System;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using UnityEngine;
 
-[ExecuteInEditMode]
 public class RoadSectionScript : MonoBehaviour
 {
     public string Section;
 
-    private GameObject[] tiles;
-
     private void CreateSection()
     {
-        if (tiles != null)
+        foreach (Transform tile in transform)
         {
-            foreach (var tile in tiles)
-            {
-                tile.transform.parent = null;
-                GameObject.Destroy(tile);
-            }
+            Destroy(tile.gameObject);
         }
 
-        tiles = new GameObject[Section.Length];
-        for (var i = 0; i < Section.Length; i++)
+        var sectionParts = Section.Split(',');
+
+        for (var i = 0; i < sectionParts.Length; i++)
         {
-            var sectionType = Section[i];
-            RoadScript.RoadSectionType type;
+            var sectionType = sectionParts[i];
+            RoadSectionType type;
             switch (sectionType)
             {
-                case 's':
-                    type = RoadScript.RoadSectionType.Straight;
+                case "s":
+                    type = RoadSectionType.Straight;
                     break;
-                case 'c':
-                    type = RoadScript.RoadSectionType.Curve;
+                case "l":
+                    type = RoadSectionType.Left;
                     break;
-                case 'd':
-                    type = RoadScript.RoadSectionType.DeadEnd;
+                case "r":
+                    type = RoadSectionType.Right;
                     break;
-                case 't':
-                    type = RoadScript.RoadSectionType.ThreeWayIntersection;
+                case "fr":
+                    type = RoadSectionType.FromRight;
                     break;
-                case 'x':
-                    type = RoadScript.RoadSectionType.FourWayIntersection;
+                case "fl":
+                    type = RoadSectionType.FromLeft;
                     break;
-                case 'l':
-                    type = RoadScript.RoadSectionType.StraightLake;
+                case "start":
+                    type = RoadSectionType.DeadEndStart;
                     break;
-                case 'r':
-                    type = RoadScript.RoadSectionType.StraightRiver;
+                case "end":
+                    type = RoadSectionType.DeadEnd;
                     break;
-                case 'C':
-                    type = RoadScript.RoadSectionType.StraightCanal;
+                case "ts":
+                    type = RoadSectionType.TStart;
+                    break;
+                case "te":
+                    type = RoadSectionType.TEnd;
+                    break;
+                case "tl":
+                    type = RoadSectionType.TLeft;
+                    break;
+                case "tr":
+                    type = RoadSectionType.TRight;
+                    break;
+                case "x":
+                    type = RoadSectionType.FourWayIntersection;
+                    break;
+                case "sl":
+                    type = RoadSectionType.StraightLake;
+                    break;
+                case "sr":
+                    type = RoadSectionType.StraightRiver;
+                    break;
+                case "sc":
+                    type = RoadSectionType.StraightCanal;
                     break;
                 default:
                     throw new InvalidEnumArgumentException(string.Format("Section type {0} not mapped.", sectionType));
             }
 
-            var tile = (GameObject)Instantiate(Resources.Load("Prefabs/RoadTile"));
+            var tile = (GameObject) Instantiate(Resources.Load("Prefabs/RoadTile"));
             tile.transform.parent = transform;
             tile.transform.localPosition = Vector3.zero;
             tile.transform.localPosition = new Vector2(0, i - 1);
             tile.GetComponent<RoadScript>().SectionType = type;
-
-            tiles[i] = tile;
         }
     }
 

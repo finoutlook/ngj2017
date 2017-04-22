@@ -197,20 +197,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &917653173
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 4257511318840178, guid: 95795e0c311080a46a8c7b11e07bb420, type: 2}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 95795e0c311080a46a8c7b11e07bb420, type: 2}
-  m_IsPrefabParent: 0
 --- !u!1 &1073167443
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +224,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a90d37cb42ea8541882290a2bcac048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Section: sssc
+  Section: start,s,l,r,fl,fr,tl,tr,ts,te,x,sl,sr,sc,x,end
 --- !u!4 &1073167445
 Transform:
   m_ObjectHideFlags: 0
@@ -250,5 +236,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -52,17 +52,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d481b96516d65df4997e08daa1ff89ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SectionType: 0
-  Curve: {fileID: 21300000, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  CurveLeft: {fileID: 21300158, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  CurveRight: {fileID: 21300000, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  CurveFromLeft: {fileID: 21300166, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  CurveFromRight: {fileID: 21300170, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
   DeadEnd: {fileID: 21300038, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  DeadEndStart: {fileID: 21300164, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
   FourWayIntersection: {fileID: 21300046, guid: 6f2b56b2a81f4424c8b328c4c87aa229,
     type: 3}
+  SectionType: 3
   Straight: {fileID: 21300012, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
   StraightCanal: {fileID: 21300142, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
   StraightLake: {fileID: 21300106, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
   StraightRiver: {fileID: 21300124, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
-  ThreeWayIntersection: {fileID: 21300002, guid: 6f2b56b2a81f4424c8b328c4c87aa229,
-    type: 3}
+  TStart: {fileID: 21300168, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  TEnd: {fileID: 21300002, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  TLeft: {fileID: 21300160, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  TRight: {fileID: 21300162, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
 --- !u!212 &212453228181070126
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -95,7 +101,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300012, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
+  m_Sprite: {fileID: 21300046, guid: 6f2b56b2a81f4424c8b328c4c87aa229, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

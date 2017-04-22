@@ -4,12 +4,22 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class RoadScript : MonoBehaviour
 {
+    private RoadSectionType currentSectionType;
+    
     public RoadSectionType SectionType;
 
     [Header("Sprites")]
-    public Sprite Curve;
+    public Sprite CurveLeft;
+
+    public Sprite CurveRight;
+
+    public Sprite CurveFromLeft;
+
+    public Sprite CurveFromRight;
 
     public Sprite DeadEnd;
+
+    public Sprite DeadEndStart;
 
     public Sprite FourWayIntersection;
 
@@ -21,41 +31,40 @@ public class RoadScript : MonoBehaviour
 
     public Sprite StraightRiver;
 
-    public Sprite ThreeWayIntersection;
+    public Sprite TStart;
 
-    private RoadSectionType currentSectionType;
+    public Sprite TEnd;
 
-    public enum RoadSectionType
-    {
-        Straight = 0,
+    public Sprite TLeft;
 
-        Curve = 1,
-
-        DeadEnd = 2,
-
-        ThreeWayIntersection = 3,
-
-        FourWayIntersection = 4,
-
-        StraightLake = 5,
-
-        StraightRiver = 6,
-
-        StraightCanal = 7
-    }
+    public Sprite TRight;
 
     public Sprite GetSprite(RoadSectionType sectionType)
     {
         switch (sectionType)
         {
-            case RoadSectionType.Curve:
-                return Curve;
+            case RoadSectionType.Left:
+                return CurveLeft;
+            case RoadSectionType.Right:
+                return CurveRight;
+            case RoadSectionType.FromLeft:
+                return CurveFromLeft;
+            case RoadSectionType.FromRight:
+                return CurveFromRight;
             case RoadSectionType.DeadEnd:
                 return DeadEnd;
+            case RoadSectionType.DeadEndStart:
+                return DeadEndStart;
             case RoadSectionType.Straight:
                 return Straight;
-            case RoadSectionType.ThreeWayIntersection:
-                return ThreeWayIntersection;
+            case RoadSectionType.TStart:
+                return TStart;
+            case RoadSectionType.TEnd:
+                return TEnd;
+            case RoadSectionType.TRight:
+                return TRight;
+            case RoadSectionType.TLeft:
+                return TLeft;
             case RoadSectionType.FourWayIntersection:
                 return FourWayIntersection;
             case RoadSectionType.StraightLake:
@@ -79,9 +88,7 @@ public class RoadScript : MonoBehaviour
     private void Update()
     {
         if (currentSectionType != SectionType)
-        {
             UpdateSprite();
-        }
     }
 
     private void UpdateSprite()
