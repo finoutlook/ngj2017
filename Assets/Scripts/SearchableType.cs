@@ -9,6 +9,14 @@ public enum SearchableType
     MayanHouse3 = 4,
     MayanHouse4 = 5,
     Grass = 6,
+    Building1 = 7,
+    Building2 = 8,
+    Building3 = 9,
+    Building4 = 10,
+    Building5 = 11,
+    Building6 = 12,
+    Building7 = 13,
+    Building8 = 14,
 }
 
 public static class SearchableTypeExtensions
