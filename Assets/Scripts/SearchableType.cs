@@ -16,15 +16,7 @@ public enum SearchableType
     Building5 = 71,
     Building6 = 72,
     Building7 = 73,
-    Building8 = 74,
-    Building1 = 7,
-    Building2 = 8,
-    Building3 = 9,
-    Building4 = 10,
-    Building5 = 11,
-    Building6 = 12,
-    Building7 = 13,
-    Building8 = 14,
+    Building8 = 74
 }
 
 public static class SearchableTypeExtensions
