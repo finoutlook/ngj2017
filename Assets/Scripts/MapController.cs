@@ -193,6 +193,10 @@ public class MapController : MonoBehaviour
 
         TileManager tileManager = (TileManager)tile.GetComponent(typeof(TileManager));
         tileManager.TileId = (int) sectionType;
+        if ( sectionType == SearchableType.MayanHouse2 )
+        {
+            tileManager.TileId = 999;
+        }
         tileManager.IsRoad = false;
         tileManager.IsPrize = false;
         tileManager.IsDecorationTile = sectionType.IsDecoration();

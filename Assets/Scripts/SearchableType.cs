@@ -28,7 +28,7 @@ public static class SearchableTypeExtensions
 {
     public static bool IsDecoration(this SearchableType type)
     {
-        List<SearchableType> decorationTiles = new List<SearchableType>() {SearchableType.Grass, SearchableType.tree_small};
+        List<SearchableType> decorationTiles = new List<SearchableType>() {SearchableType.Grass, SearchableType.tree_small, SearchableType.MayanHouse2, SearchableType.rock2 };
 
         if (decorationTiles.Contains(type))
         {

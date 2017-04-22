@@ -79,6 +79,7 @@ public class ClueManager : MonoBehaviour
 
         currentClue = WINNING_TILE_ID;
         matchesText.text = "???";
+        TextChanger.Text("Anywhere else to look?");
         Debug.Log("Final clue: " + currentClue);
         return currentClue;
     }
