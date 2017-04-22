@@ -15,7 +15,7 @@ public class MatchFinder : MonoBehaviour {
 
     bool[,] zonesFound;
 
-    private Vector2 lastPlayerLocation;
+    private Vector3 lastPlayerLocation;
     private GameObject player;
 
 	// Use this for initialization
@@ -24,10 +24,10 @@ public class MatchFinder : MonoBehaviour {
         player = GameObject.Find("Player");
 
         ClueManager.AnalyzeMap(MapController);
-        zonesFound = new bool[MapController.Tiles.GetLength(0), MapController.Tiles.GetLength(1)];
-        for ( int i = 0; i < MapController.Tiles.GetLength(0); i++ )
+        zonesFound = new bool[MapController.Tiles.Length, MapController.Tiles[0].Length];
+        for ( int i = 0; i < MapController.Tiles.Length; i++ )
         {
-            for ( int j = 0; j < MapController.Tiles.GetLength(1); j++ )
+            for ( int j = 0; j < MapController.Tiles[0].Length; j++ )
             {
                 zonesFound[i, j] = false;
             }
@@ -46,6 +46,8 @@ public class MatchFinder : MonoBehaviour {
             return;
         }
 
+        lastPlayerLocation = playerLocation;
+
         Debug.Log("[MatchFinder] New player location: " + playerLocation);
 
         int playerX = (int)playerLocation.x;
@@ -55,35 +57,44 @@ public class MatchFinder : MonoBehaviour {
         int currentClue = ClueManager.GetCurrentClue();
 
         // check adjacent map items
-        int tileUp = playerY < MaxY ? GetTileClue(MapController.Tiles[playerX][playerY + 1]) : -1;
-        int tileDown = playerY > MinY ? GetTileClue(MapController.Tiles[playerX][playerY - 1]) : -1;
-        int tileLeft = playerX > MinX ? GetTileClue(MapController.Tiles[playerX - 1][playerY]): -1;
-        int tileRight = playerX < MaxX ? GetTileClue(MapController.Tiles[playerX + 1][playerY]) : -1;
+        var upTile = GetTileManager(MapController.GetTileFromWorldCoordinates(player.transform.position + Vector3.up/*MapController.Tiles[playerX][playerY + 1]*/));
+        var downTile = GetTileManager(MapController.GetTileFromWorldCoordinates(player.transform.position + Vector3.down/*MapController.Tiles[playerX][playerY - 1]*/));
+        var leftTile = GetTileManager(MapController.GetTileFromWorldCoordinates(player.transform.position + Vector3.left/*MapController.Tiles[playerX - 1][playerY]*/));
+        var rightTile = GetTileManager(MapController.GetTileFromWorldCoordinates(player.transform.position + Vector3.right/*MapController.Tiles[playerX + 1][playerY]*/));
 
+        int tileUp = playerY < MaxY ? upTile.TileId : -1;
+        int tileDown = playerY > MinY ? downTile.TileId : -1;
+        int tileLeft = playerX > MinX ? leftTile.TileId : -1;
+        int tileRight = playerX < MaxX ? rightTile.TileId : -1;
+        
         // see if any belongs to the clue
-        if ( tileUp == currentClue && !zonesFound[playerX, playerY + 1] )
+        if ( tileUp == currentClue && !upTile.IsFound )
         {
             Debug.Log("[MatchFinder] Clue match found up");
-            ClueTileFound(playerX, playerY + 1);
+            ClueTileFound(upTile.gameObject);
+            upTile.IsFound = true;
         }
-        if ( tileDown == currentClue )
+        if ( tileDown == currentClue && !downTile.IsFound )
         {
             Debug.Log("[MatchFinder] Clue match found down");
-            ClueTileFound(playerX, playerY - 1);
+            ClueTileFound(downTile.gameObject);
+            downTile.IsFound = true;
         }
-        if ( tileLeft == currentClue )
+        if ( tileLeft == currentClue && !leftTile.IsFound )
         {
             Debug.Log("[MatchFinder] Clue match found left");
-            ClueTileFound(playerX - 1, playerY);
+            ClueTileFound(leftTile.gameObject);
+            leftTile.IsFound = true;
         }
-        if ( tileRight == currentClue )
+        if ( tileRight == currentClue && !rightTile.IsFound )
         {
             Debug.Log("[MatchFinder] Clue match found right");
-            ClueTileFound(playerX + 1, playerY);
+            ClueTileFound(rightTile.gameObject);
+            rightTile.IsFound = true;
         }
     }
 
-    private void ClueTileFound(int x, int y)
+    private void ClueTileFound(GameObject tileObject)
     {
         if (ClueManager.GetCurrentClue() == 999)
         {
@@ -91,11 +102,8 @@ public class MatchFinder : MonoBehaviour {
         }
         else
         {
-            // mark zone found
-            zonesFound[x, y] = true;
             // change the game object sprite to a different color
-            GameObject tileObject = MapController.Tiles[x][y];
-            tileObject.GetComponent<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.5f);
+            tileObject.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.5f);
             if (ParticleSystem != null)
             {
                 ParticleSystem.transform.position = tileObject.transform.position;
@@ -106,9 +114,9 @@ public class MatchFinder : MonoBehaviour {
         }
     }
 
-    private int GetTileClue(GameObject tile)
+    private TileManager GetTileManager(GameObject tile)
     {
         TileManager tileManager = (TileManager)tile.GetComponent(typeof(TileManager));
-        return tileManager.TileId;
+        return tileManager;
     }
 }

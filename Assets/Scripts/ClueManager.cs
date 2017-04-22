@@ -67,11 +67,13 @@ public class ClueManager : MonoBehaviour
             {
                 TextChanger.Text(tileClues[i]);
                 currentClue = i;
+                Debug.Log("Next clue: " + currentClue);
                 return i;
             }
         }
 
         currentClue = WINNING_TILE_ID;
+        Debug.Log("Final clue: " + currentClue);
         return currentClue;
     }
 

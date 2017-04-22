@@ -7,4 +7,5 @@ public class TileManager : MonoBehaviour
     public bool IsPrize;
     public bool IsDecorationTile;
     public string ClueDescription;
+    public bool IsFound = false;
 }
