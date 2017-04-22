@@ -16,7 +16,12 @@ public enum SearchableType
     Building5 = 71,
     Building6 = 72,
     Building7 = 73,
-    Building8 = 74
+    Building8 = 74,
+    barrel_red = 75,
+    barrel_blue = 76,
+    tree_small = 77,
+    rock2 = 78,
+    cone_down = 79
 }
 
 public static class SearchableTypeExtensions
@@ -65,6 +70,16 @@ public static class SearchableTypeExtensions
                 return "Not next to Building7";
             case SearchableType.Building8:
                 return "Not next to Building8";
+            case SearchableType.barrel_blue:
+                return "Not next to barrel_blue";
+            case SearchableType.barrel_red:
+                return "Not next to barrel_red";
+            case SearchableType.tree_small:
+                return "Not next to tree_small";
+            case SearchableType.rock2:
+                return "Not next to rock2";
+            case SearchableType.cone_down:
+                return "Not next to cone_down";
             default:
                 throw new ArgumentOutOfRangeException("type", type, null);
         }

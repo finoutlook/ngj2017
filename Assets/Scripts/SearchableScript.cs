@@ -23,6 +23,11 @@ public class SearchableScript : MonoBehaviour
     public Sprite Building6;
     public Sprite Building7;
     public Sprite Building8;
+    public Sprite barrel_red;
+    public Sprite barrel_blue;
+    public Sprite tree_small;
+    public Sprite rock2;
+    public Sprite cone_down;
 
     // Use this for initialization
     void Start ()
@@ -42,6 +47,12 @@ public class SearchableScript : MonoBehaviour
         map[SearchableType.Building6] = Building6;
         map[SearchableType.Building7] = Building7;
         map[SearchableType.Building8] = Building8;
+
+        map[SearchableType.barrel_blue] = barrel_blue;
+        map[SearchableType.barrel_red] = barrel_red;
+        map[SearchableType.tree_small] = tree_small;
+        map[SearchableType.rock2] = rock2;
+        map[SearchableType.cone_down] = cone_down;
 
         UpdateSprite();
     }
