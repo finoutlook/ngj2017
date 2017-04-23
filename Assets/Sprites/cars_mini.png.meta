@@ -1,12 +1,14 @@
 fileFormatVersion: 2
-guid: 33d87a57f764a684f84a3e8821cc160d
-timeCreated: 1492852487
+guid: 47379e75b95cfc04ebb8ca5c20dcff08
+timeCreated: 1492939486
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: player_0
-    21300002: player_1
-    21300004: player_2
+    21300000: cars_mini_0
+    21300002: cars_mini_1
+    21300004: cars_mini_2
+    21300006: cars_mini_3
+    21300008: cars_mini_4
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -43,7 +45,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spritePixelsToUnits: 406
+  spritePixelsToUnits: 600
   alphaUsage: 1
   alphaIsTransparency: 1
   spriteTessellationDetail: -1
@@ -97,39 +99,65 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: player_0
+      name: cars_mini_0
       rect:
         serializedVersion: 2
-        x: 6
-        y: 27
-        width: 109
-        height: 182
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_1
-      rect:
-        serializedVersion: 2
-        x: 151
-        y: 3
-        width: 90
-        height: 225
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: player_2
-      rect:
-        serializedVersion: 2
-        x: 269
+        x: 0
         y: 0
-        width: 127
-        height: 232
+        width: 199
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cars_mini_1
+      rect:
+        serializedVersion: 2
+        x: 246
+        y: 0
+        width: 200
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cars_mini_2
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 0
+        width: 199
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cars_mini_3
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 0
+        width: 200
+        height: 339
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: cars_mini_4
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 0
+        width: 199
+        height: 339
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
