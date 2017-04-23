@@ -529,7 +529,9 @@ Prefab:
     - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
       propertyPath: m_Text
-      value: You don't have much time. Fuel for a few minutes of searching at most
+      value: 'You don''t have much time.
+
+        Fuel for a few minutes of searching at most...'
       objectReference: {fileID: 0}
     - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
@@ -654,7 +656,7 @@ Prefab:
 
         But something is definitely... not there.
 
-        Yesterday you quit your job, packed, got in the car and started driving...'
+        You quit your job, got in the car and started driving.'
       objectReference: {fileID: 0}
     - target: {fileID: 114185942442329634, guid: 6513a1ec72985e3449635665de259e6f,
         type: 2}
