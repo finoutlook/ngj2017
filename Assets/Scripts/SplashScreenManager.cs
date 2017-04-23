@@ -4,28 +4,34 @@ using UnityEngine;
 
 public class SplashScreenManager : MonoBehaviour
 {
-	// Use this for initialization
-	void Start () {
+    AudioSource _audioSource;
+
+    // Use this for initialization
+    void Start ()
+    {
         StartCoroutine("Wait");
 
-        AudioSource audioSource = GameObject.FindObjectOfType<AudioSource>();
-        audioSource.time = 5.00f;
+        _audioSource = GameObject.FindObjectOfType<AudioSource>();
+        _audioSource.time = 5.00f;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        AudioSource audioSource = GameObject.FindObjectOfType<AudioSource>();
-
-        if (audioSource.time > 7.55f)
+        if (_audioSource == null)
         {
-            audioSource.Stop();
+            _audioSource = GameObject.FindObjectOfType<AudioSource>();
+        }
+
+        if (_audioSource.time > 7.62f)
+        {
+            _audioSource.Stop();
         }
     }
 
     IEnumerator Wait()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(4);
         Application.LoadLevel("Start");
     }
 }
