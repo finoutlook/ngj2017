@@ -102,6 +102,7 @@ public class MatchFinder : MonoBehaviour {
         }
         else
         {
+            tileObject.GetComponentInChildren<AudioSource>().Play();
             // change the game object sprite to a different color
             tileObject.GetComponentInChildren<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.9f);
             if (ParticleSystem != null)
