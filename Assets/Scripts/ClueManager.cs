@@ -12,7 +12,7 @@ public class ClueManager : MonoBehaviour
 
     private int currentClue = 0;
     private const int WINNING_TILE_ID = 999;
-    
+    private GameObject prizeTile;
 
     public int AnalyzeMap(MapController mapController)
     {
@@ -32,6 +32,12 @@ public class ClueManager : MonoBehaviour
                     {
                         tileClues[tileManager.TileId] = tileManager.ClueDescription;
                     }
+                }
+
+                if (tileManager.IsPrize)
+                {
+                    tileManager.gameObject.GetComponentInChildren<SpriteRenderer>().color = new Color(0.0f, 0.0f, 0.0f, 0.01f);
+                    prizeTile = tileManager.gameObject;
                 }
             }
         }
@@ -81,6 +87,7 @@ public class ClueManager : MonoBehaviour
         currentClue = WINNING_TILE_ID;
         matchesText.text = "???";
         TextChanger.Text("Anywhere else to look?");
+        prizeTile.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
         Debug.Log("Final clue: " + currentClue);
         return currentClue;
     }
