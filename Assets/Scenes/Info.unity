@@ -719,7 +719,7 @@ Prefab:
     - target: {fileID: 224741244551925578, guid: 00f027d8c9e962c4586cfa174fdae94a,
         type: 2}
       propertyPath: m_AnchoredPosition.x
-      value: 718
+      value: 771
       objectReference: {fileID: 0}
     - target: {fileID: 224741244551925578, guid: 00f027d8c9e962c4586cfa174fdae94a,
         type: 2}
@@ -789,6 +789,10 @@ Prefab:
     - target: {fileID: 1048621073590186, guid: 00f027d8c9e962c4586cfa174fdae94a, type: 2}
       propertyPath: m_Name
       value: TestButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 1048621073590186, guid: 00f027d8c9e962c4586cfa174fdae94a, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00f027d8c9e962c4586cfa174fdae94a, type: 2}
