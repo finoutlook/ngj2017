@@ -60,6 +60,7 @@ public class ClueManager : MonoBehaviour
         }
 
         //if outval = 0, change clue
+        this.gameObject.GetComponent<AudioSource>().Play();
         return FindNewClue();
     }
 
