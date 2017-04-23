@@ -103,7 +103,7 @@ public class MatchFinder : MonoBehaviour {
         else
         {
             // change the game object sprite to a different color
-            tileObject.GetComponentInChildren<SpriteRenderer>().color = new Color(1.0f, 0.0f, 0.0f, 0.5f);
+            tileObject.GetComponentInChildren<SpriteRenderer>().color = new Color(0.5f, 0.5f, 0.5f, 0.9f);
             if (ParticleSystem != null)
             {
                 ParticleSystem.transform.position = tileObject.transform.position + new Vector3(0.5f, 0.5f, 0f);
